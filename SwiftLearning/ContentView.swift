@@ -10,12 +10,15 @@ struct ContentView: View {
                 .foregroundStyle(.orange)
             Text("Hello, SwiftUI!")
                 .font(.largeTitle.bold())
-            Text("You tapped \(count) times")
-                .foregroundStyle(.secondary)
-            Button("Tap me") {
-                count += 1
+
+            Button("Run SOLID demos") {
+                SRPExample.demo()
+                OCPExample.demo()
+                LSPExample.demo()
+                ISPExample.demo()
+                DIPExample.demo()
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.bordered)
         }
         .padding()
     }
