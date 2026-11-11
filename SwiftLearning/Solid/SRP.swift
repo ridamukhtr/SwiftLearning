@@ -19,31 +19,35 @@ enum SRPExample {
     // SRP
 
     struct PaymentProcessor {
-        func processPayment(amount: Double) {
+        func process(amount: Double) {
             print("Processing payment of \(amount)")
         }
     }
 
     struct PaymentRepository {
-        func savePaymentDetails() {
+        func savePayment() {
             print("Saving payment details to database")
         }
     }
 
     struct ReceiptService {
-        func sendReceipt() {
+        func send() {
             print("Sending receipt to customer")
         }
     }
 
     static func demo() {
-        let processor = PaymentProcessor()
-        processor.processPayment(amount: 500)
+        print("\n=== SRP ===")
 
-        let repository = PaymentRepository()
-        repository.savePaymentDetails()
+        print("-- violation (one struct does everything) --")
+        let god = PaymentManager()
+        god.processPayment(amount: 500)
+        god.savePaymentDetails()
+        god.sendReceipt()
 
-        let receipt = ReceiptService()
-        receipt.sendReceipt()
+        print("-- fix (each struct does one thing) --")
+        PaymentProcessor().processPayment(amount: 500)
+        PaymentRepository().savePaymentDetails()
+        ReceiptService().sendReceipt()
     }
 }

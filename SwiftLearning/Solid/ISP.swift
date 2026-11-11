@@ -62,13 +62,14 @@ enum ISPExample {
     }
 
     static func demo() {
-        print("-- ISP --")
-        // Violation: cash is forced to implement saveCard() even though it means nothing.
+        print("\n=== ISP ===")
+
+        print("-- violation (cash forced to implement saveCard) --")
         let violation = CashPaymentViolation()
         violation.processPayment(amount: 300)
-        violation.saveCard()
+        violation.saveCard()   // empty, means nothing for cash
 
-        // Fix: cash only conforms to PaymentProcessing. Card picks up CardSaving too.
+        print("-- fix (cash only conforms to PaymentProcessing) --")
         let card = CardPayment()
         card.processPayment(amount: 500)
         card.saveCard()

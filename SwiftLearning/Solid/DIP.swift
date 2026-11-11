@@ -51,9 +51,15 @@ enum DIPExample {
     }
 
     static func demo() {
+        print("\n=== DIP ===")
+
+        print("-- violation (manager hard-wired to CardPaymentViolation) --")
+        let bad = PaymentManagerViolation()
+        bad.checkout(amount: 500)
+
+        print("-- fix (manager depends on PaymentMethod protocol) --")
         let cardManager = PaymentManager(paymentMethod: CardPayment())
         let jazzCashManager = PaymentManager(paymentMethod: JazzCashPayment())
-
         cardManager.checkout(amount: 500)
         jazzCashManager.checkout(amount: 1000)
     }

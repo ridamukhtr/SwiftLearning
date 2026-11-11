@@ -62,9 +62,15 @@ enum LSPExample {
     }
 
     static func demo() {
-        print("-- LSP --")
-        // Deliberately not calling RefundPaymentViolation().processPayment(...)
-        // because it fatalErrors — that *is* the violation.
+        print("\n=== LSP ===")
+
+        print("-- violation (RefundPaymentViolation pretends to be a PaymentMethod) --")
+        // Not calling RefundPaymentViolation().processPayment(...) because it
+        // fatalErrors — that crash *is* the LSP violation: a caller holding it
+        // as a PaymentMethod would break at runtime.
+        print("(skipped — calling it would crash; that's the violation)")
+
+        print("-- fix (refund has its own protocol) --")
         let card = CardPayment()
         card.processPayment(amount: 500)
 

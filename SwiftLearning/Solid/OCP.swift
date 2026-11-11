@@ -39,6 +39,12 @@ enum OCPExample {
         }
     }
 
+   struct BankTransferPayment: PaymentMethod {
+        func processPayment(amount: Double) {
+            print("Processing bank transfer payment: \(amount)")
+        }
+    }
+
     struct PaymentManager {
         let paymentMethod: any PaymentMethod
 
@@ -52,6 +58,14 @@ enum OCPExample {
     }
 
     static func demo() {
+        print("\n=== OCP ===")
+
+        print("-- violation (if/else over method strings) --")
+        let bad = PaymentManagerViolation()
+        bad.processPayment(method: "card", amount: 500)
+        bad.processPayment(method: "cash", amount: 200)
+
+        print("-- fix (add JazzCash without touching existing code) --")
         let manager = PaymentManager(paymentMethod: JazzCashPayment())
         manager.checkout(amount: 1000)
     }
