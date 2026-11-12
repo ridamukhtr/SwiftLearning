@@ -6,32 +6,89 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1CB351F930A5A05E000FF53E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB351F830A5A05E000FF53E /* FirebaseAuth */; };
+		1CB351FB30A5A085000FF53E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB351FA30A5A085000FF53E /* FirebaseFirestore */; };
+		1CE251CD30A4A9E400F2CD09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CE251CC30A4A9E400F2CD09 /* GoogleService-Info.plist */; };
+		1CE251D830A4B99300F2CD09 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1CE251D730A4B99300F2CD09 /* FirebaseCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		1CE251CC30A4A9E400F2CD09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A10000000000000000000001 /* SwiftLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A10000000000000000000002 /* SwiftLearning */ = {isa = PBXFileSystemSynchronizedRootGroup; path = SwiftLearning; sourceTree = "<group>"; };
+		A10000000000000000000002 /* SwiftLearning */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SwiftLearning;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A10000000000000000000003 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CE251D830A4B99300F2CD09 /* FirebaseCore in Frameworks */,
+				1CB351F930A5A05E000FF53E /* FirebaseAuth in Frameworks */,
+				1CB351FB30A5A085000FF53E /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A10000000000000000000004 = {isa = PBXGroup; children = (A10000000000000000000002 /* SwiftLearning */, A10000000000000000000005 /* Products */); sourceTree = "<group>"; };
-		A10000000000000000000005 /* Products */ = {isa = PBXGroup; children = (A10000000000000000000001 /* SwiftLearning.app */); name = Products; sourceTree = "<group>"; };
+		1CE251D630A4B99300F2CD09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000004 = {
+			isa = PBXGroup;
+			children = (
+				1CE251CC30A4A9E400F2CD09 /* GoogleService-Info.plist */,
+				A10000000000000000000002 /* SwiftLearning */,
+				1CE251D630A4B99300F2CD09 /* Frameworks */,
+				A10000000000000000000005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A10000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000001 /* SwiftLearning.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		A10000000000000000000006 /* SwiftLearning */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1000000000000000000000B;
-			buildPhases = (A10000000000000000000007 /* Sources */, A10000000000000000000003 /* Frameworks */, A10000000000000000000008 /* Resources */);
-			buildRules = ();
-			dependencies = ();
-			fileSystemSynchronizedGroups = (A10000000000000000000002 /* SwiftLearning */);
+			buildConfigurationList = A1000000000000000000000B /* Build configuration list for PBXNativeTarget "SwiftLearning" */;
+			buildPhases = (
+				A10000000000000000000007 /* Sources */,
+				A10000000000000000000003 /* Frameworks */,
+				A10000000000000000000008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A10000000000000000000002 /* SwiftLearning */,
+			);
 			name = SwiftLearning;
+			packageProductDependencies = (
+				1CE251D730A4B99300F2CD09 /* FirebaseCore */,
+				1CB351F830A5A05E000FF53E /* FirebaseAuth */,
+				1CB351FA30A5A085000FF53E /* FirebaseFirestore */,
+			);
 			productName = SwiftLearning;
 			productReference = A10000000000000000000001 /* SwiftLearning.app */;
 			productType = "com.apple.product-type.application";
@@ -41,27 +98,57 @@
 /* Begin PBXProject section */
 		A10000000000000000000009 /* Project object */ = {
 			isa = PBXProject;
-			attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2600; LastUpgradeCheck = 2600; TargetAttributes = {A10000000000000000000006 = {CreatedOnToolsVersion = 26.0;};};};
-			buildConfigurationList = A1000000000000000000000A;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					A10000000000000000000006 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = A1000000000000000000000A /* Build configuration list for PBXProject "SwiftLearning" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
-			knownRegions = (en, Base);
+			knownRegions = (
+				en,
+				Base,
+			);
 			mainGroup = A10000000000000000000004;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1CE251D530A4B84800F2CD09 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A10000000000000000000005 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
-			targets = (A10000000000000000000006 /* SwiftLearning */);
+			targets = (
+				A10000000000000000000006 /* SwiftLearning */,
+			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A10000000000000000000008 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CE251CD30A4A9E400F2CD09 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A10000000000000000000007 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -76,7 +163,10 @@
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
@@ -118,7 +208,10 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rida.SwiftLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -142,7 +235,10 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rida.SwiftLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -155,9 +251,54 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1000000000000000000000A = {isa = XCConfigurationList; buildConfigurations = (A1000000000000000000000C /* Debug */, A1000000000000000000000D /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		A1000000000000000000000B = {isa = XCConfigurationList; buildConfigurations = (A1000000000000000000000E /* Debug */, A1000000000000000000000F /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A1000000000000000000000A /* Build configuration list for PBXProject "SwiftLearning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000000000000000000000C /* Debug */,
+				A1000000000000000000000D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000000000000000000000B /* Build configuration list for PBXNativeTarget "SwiftLearning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000000000000000000000E /* Debug */,
+				A1000000000000000000000F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1CE251D530A4B84800F2CD09 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1CB351F830A5A05E000FF53E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CE251D530A4B84800F2CD09 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1CB351FA30A5A085000FF53E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CE251D530A4B84800F2CD09 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1CE251D730A4B99300F2CD09 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CE251D530A4B84800F2CD09 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A10000000000000000000009 /* Project object */;
 }
