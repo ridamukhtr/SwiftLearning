@@ -1,23 +1,21 @@
 import SwiftUI
 import FirebaseCore
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        FirebaseApp.configure()
-        return true
-    }
-}
-
 @main
 struct SwiftLearningApp: App {
     // register app delegate for Firebase setup
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var userViewModel: UserViewModel
+
+    init() {
+        FirebaseApp.configure()
+        let dependencies = AppDependencies()
+        _userViewModel = StateObject(wrappedValue: dependencies.userViewModel)
+    }
 
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ContentView()
+                UserView(viewModel: userViewModel)
             }
         }
     }
