@@ -30,5 +30,36 @@ final class UserViewModel: ObservableObject {
             currentUser = user
         } catch {
             errorMessage = error.localizedDescription
-        }    }
+        }
+    }
+    
+    func login(email: String, password: String) async {
+        isLoading = true
+        errorMessage = nil
+
+        defer {
+            isLoading = false
+        }
+
+        do {
+            let user = try await repository.loginUser(
+                email: email,
+                password: password
+            )
+            currentUser = user
+
+        }catch {
+            errorMessage = error.localizedDescription
+        }
+
+    }
+
+    func logout() async {
+        do {
+            try await repository.logout()
+            currentUser = nil
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
 }

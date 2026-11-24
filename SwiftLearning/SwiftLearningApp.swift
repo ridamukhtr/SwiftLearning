@@ -3,8 +3,8 @@ import FirebaseCore
 
 @main
 struct SwiftLearningApp: App {
-    // register app delegate for Firebase setup
     @StateObject private var userViewModel: UserViewModel
+    @StateObject private var router = AppRouter()
 
     init() {
         FirebaseApp.configure()
@@ -14,8 +14,17 @@ struct SwiftLearningApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                UserView(viewModel: userViewModel)
+            NavigationStack(path: $router.path) {
+                LoginView(viewModel: userViewModel)
+                    .navigationDestination(for: AppRoute.self) { route in
+                        switch route {
+                        case .register:
+                            UserView(viewModel: userViewModel)
+                        case .home:
+                            HomeView(viewModel: userViewModel)
+                        }
+                    }
+                    .environmentObject(router)
             }
         }
     }

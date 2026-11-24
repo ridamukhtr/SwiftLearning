@@ -1,8 +1,8 @@
-
 import SwiftUI
 
 struct UserView: View {
     @ObservedObject var viewModel: UserViewModel
+    @EnvironmentObject var router: AppRouter
 
     @State private var name = ""
     @State private var email = ""
@@ -13,44 +13,22 @@ struct UserView: View {
             Text("Create Account")
                 .font(.largeTitle.bold())
 
-            TextField("Full Name", text: $name)
-                .textFieldStyle(.roundedBorder)
+            AppTextField(title: "Full Name", text: $name)
+            AppTextField(title: "Email", text: $email, keyboardType: .emailAddress)
+            AppTextField(title: "Password", text: $password, isSecure: true)
 
-            TextField("Email", text: $email)
-                .textFieldStyle(.roundedBorder)
-                .textInputAutocapitalization(.never)
-                .keyboardType(.emailAddress)
-
-            SecureField("Password", text: $password)
-                .textFieldStyle(.roundedBorder)
-
-            Button {
+            AppButton(title: "Register", isLoading: viewModel.isLoading) {
                 Task {
-                    await viewModel.register(
-                        name: name,
-                        email: email,
-                        password: password
-                    )
-                }
-            } label: {
-                if viewModel.isLoading {
-                    ProgressView()
-                } else {
-                    Text("Register")
-                        .frame(maxWidth: .infinity)
+                    await viewModel.register(name: name, email: email, password: password)
+                    if viewModel.currentUser != nil {
+                        router.push(.home)
+                    }
                 }
             }
-            .buttonStyle(.borderedProminent)
-            .disabled(viewModel.isLoading)
 
             if let error = viewModel.errorMessage {
                 Text(error)
                     .foregroundStyle(.red)
-            }
-
-            if let user = viewModel.currentUser {
-                Text("Welcome, \(user.name)!")
-                    .foregroundStyle(.green)
             }
         }
         .padding()
